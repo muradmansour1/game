@@ -12,11 +12,49 @@ My game is called Russian Roulette it's a game where a gun will be loaded with 1
 
 **Initial Landing View**
 
-![image](https://media.git.generalassemb.ly/user/21811/files/0f7aee00-c1d9-11ea-9dad-de086a5c91fc)
-
+![Alt text](image-4.png)
 **Results View**
 
-![image](https://media.git.generalassemb.ly/user/21811/files/1a358300-c1d9-11ea-95da-6c14aefb0f18)
+![Alt text](image-3.png)
+# russian-roulette
+
+
+## Pseudo Code
+```
+1) Let's set up the game:
+   totalChambers = 6
+   currentChamber
+   playerAlive = true
+
+2) Now, we want to create a function to pick a random chamber:
+   FUNCTION randomlySelectChamber(totalChambers):
+       RETURN randomNumber(1, totalChambers)
+
+3) Next, we'll create a function to take turns:
+   FUNCTION takeTurn():
+       // This function will include steps 4 and 5
+
+4) In each turn, we spin the revolver to randomize the chamber:
+   FUNCTION spinRevolver():
+       currentChamber = randomlySelectChamber(totalChambers)
+
+5) After spinning, we pull the trigger and check the result:
+   FUNCTION pullTrigger():
+       IF currentChamber is the loaded chamber:
+           playerAlive = false
+           OUTPUT "Bang! You are dead."
+       ELSE:
+           OUTPUT "Click! You survived. Spin the chamber again."
+
+// Now, let's start the game
+WHILE playerAlive:
+    takeTurn()
+
+// The game is over
+OUTPUT "Game Over."
+
+  
+```
 
 ## User Stories
 
@@ -46,13 +84,14 @@ https://www.tablesgenerator.com/markdown_tables
 Do not neglect to plan, you will thank yourself later for being proactive!
 | Day        |   | Task                               | Blockers | Notes/ Thoughts |
 |------------|---|------------------------------------|----------|-----------------|
-| Thursday   |   | Create and present proposal        |          |                 |
-| Friday     |   | Create html, js, css files         |          |                 |
-| Saturday   |   | Create basic scaffolding           |          |                 |
-| Sunday     |   | Add functionality                  |          |                 |
-| Monday     |   | Add styling                        |          |                 |
-| Tuesday    |   | Finaliza MVP                       |          |                 |
-| Wedenesday |   | Work on stretch goals              |          |                 |
-| Thursday   |   | Work on icebox items if applicable |          |                 |
-| Friday     |   | Presentation Day!                  |          |                 |
-|            |   |                                    |          |                 |
+| Thursday   |    | Create and present proposal        |          |                 |
+| Friday     |    | Create html, js, css files         |          |                 |
+| Saturday   |    | follow my pseudo code and see where i get from there
+          |       |                |
+| Sunday     |    | make sure my game is functionable               |          |                 |
+| Monday     |    | Add styling to make it look family friendly.                       |          |                 |
+| Tuesday    |    | Finalize MVP                      |          |                 |
+| Wedenesday |    | Work on stretch goals and get them all done           |          |                 |
+| Thursday   |    | Work on icebox items if applicable (face pictures)|          |                 |
+| Friday     |    | Presentation Day!                  |          |                 |
+|            |    |                                    |          |                 |

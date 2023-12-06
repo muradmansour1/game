@@ -1,0 +1,57 @@
+html{
+  min-height: 100%;
+}
+
+h1{
+  max-width: 100%;
+  max-height: 100%;
+  font-family: monospace;
+  font-size: 40px;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  margin: 0;
+}
+
+body {
+  font-family: monospace;
+  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right top, #6b0505, #840509, #9d050b, #b7050c, #d2060c, #ca0912, #c30c17, #bb0f1b, #8e151e, #62171c, #381416, #0d0a0a); 
+  
+}
+
+button {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  color: red;
+  font-family:monospace ;
+  text-align: center;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+}
+#restartButton {
+  display: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+
+}
+
+.gun{
+    padding: 10px;
+    height: 200px;
+    transform: rotate3d(0, 1, 0.5, 3.142rad);
+}
+
