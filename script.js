@@ -1,56 +1,89 @@
+// script.js
+const noShotSound = new Audio("assets/no-shot.mp3")
+const gunshotSound = new Audio("./assets/gunshot.mp3");
+const reloadSound = new Audio("assets/clean-revolver-reload-6889.mp3");
+
+
+
+let bullet = getRandomNumber(1, 6); // random number 1-6
+let player = getRandomNumber(1, 6); // random number 1-6
+let CURRENT_PLAYER = 'blankOne'
+
+function getRandomNumber(min, max) {
+    // returns a random number between min and max (inclusive)
+    const randomNumber = Math.floor(Math.random() * max) + min;
+    return randomNumber;
+}
+
+function pullTrigger() {
+    const resultElement = document.getElementById("result");
+    const restartButton = document.getElementById("restartButton");
+    const gunImage = document.getElementById("gunImage");
+
+    if (player === bullet) {
+        resultElement.textContent = "Bang! You lost! Game over.";
+        restartButton.style.display = "block";
+        gunImage.classList.toggle("flipped");
+        // Play the gunshot sound
+        gunshotSound.play();
+    } else {
+        player = rotateBarrel(player);
+        resultElement.textContent = "Click! You survived!";
+        // Toggle the 'flipped' class
+        gunImage.classList.toggle("flipped");
+        noShotSound.play();
+    }
+}
+
+function restartGame() {
+    const resultElement = document.getElementById("result");
+    const restartButton = document.getElementById("restartButton");
+    const gunImage = document.getElementById("gunImage");
+    reloadSound.play()
+    
+
+
+
+
+    bullet = getRandomNumber(1, 6);
+    player = getRandomNumber(1, 6);
+
+    resultElement.textContent = "";
+    restartButton.style.display = "none";
+    // Remove the 'flipped' class to reset the gun image
+    gunImage.classList.remove("flipped");
+    reloadSound.play();
+}
+
 function rotateBarrel(location) {
-  let newLocation = location % 6;
-  newLocation += 1;
-  return newLocation;
+    let newLocation = location % 6;
+    newLocation += 1;
+    return newLocation;
+}
+
+function blankOne(){
+
+}
+
+function showGallery(event){
+  CURRENT_PLAYER=event.target.id
+let gallery = document.getElementsByClassName("gallery")[0]
+gallery.classList.toggle("hidden")
+}
+
+function changePic(event){
+  let pic = event.target.src
+  console.log(pic);
+  document.getElementById(CURRENT_PLAYER).src = pic;
+  document.getElementsByClassName('gallery')[0].classList.add('hidden')
 }
 
 
-
-  function playRussianRoulette() {
-  // Generate a random number between 1 and 6
-  const randomNumber = Math.floor(Math.random() * 6) + 1;
-
-   //Check if the random number is 1
-  if (randomNumber === 1) {
-      return "Bang! You lost!"; // Player has lost
-  } else {
-      return "Click! That Was Close!"; // Player is safe
-  }
-}
-
-
-function simulateShot(chamberCount) {
-  // Check if there are chambers left
-  if (chamberCount > 0) {
-      const result = playRussianRoulette();
-      console.log(result);
-
-      // Update the chamber count for the next shot
-      chamberCount--;
-
-
-
-      // Display a message if the game is over
-      if (result.includes("Bang")) {
-          console.log("Game over. Your Dead!");
-          return false; // Indicate that the game is over
-      }
-  } else {
-      console.log("Reload the gun to play again.");
-  }
-
-  return true; // Game continues
-}
-
-// Set the initial chamber count
-let chamberCount = 6;
-
-// Shoot up to 6 shots
-// issue is over here
-for (let i = 0; i < chamberCount; i++) {
-  if (!simulateShot(chamberCount)) {
-    // Break out of the loop if the game is over
-    break;
-  }
-}
-
+document.getElementById("triggerButton").addEventListener("click", pullTrigger);
+document.getElementById("restartButton").addEventListener("click", function(){
+console.log("restart")
+restartGame()
+});
+document.getElementById("blankOne").addEventListener("click", showGallery )
+document.getElementById("blankTwo").addEventListener("click", showGallery)
+document.getElementsByClassName("gallery")[0].addEventListener("click", changePic)

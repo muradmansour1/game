@@ -2,29 +2,32 @@ html{
   min-height: 100%;
 }
 
-h1{
-  max-width: 100%;
-  max-height: 100%;
-  font-family: monospace;
-  font-size: 40px;
-  padding: 40px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10vh;
-  margin: 0;
-}
 
+  .title {
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: contain; /* or cover, depending on your preference */
+    background-position: center top;
+    background-size: 100%;
+  }
+  
 body {
+  min-height: 100vh;
   font-family: monospace;
   text-align: center;
   padding: 20px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: linear-gradient(to right top, #6b0505, #840509, #9d050b, #b7050c, #d2060c, #ca0912, #c30c17, #bb0f1b, #8e151e, #62171c, #381416, #0d0a0a); 
-  
-}
+  background-image:url(/assets/dg848s9-82244cc8-2570-4256-b4b0-b7d809f8a30f.png); 
+  }
+
+  p {
+    color: white;
+  }
 
 button {
   font-size: 20px;
@@ -32,6 +35,7 @@ button {
   margin-top: 20px;
   cursor: pointer;
   color: red;
+  background-color: black;
   font-family:monospace ;
   text-align: center;
 }
@@ -39,6 +43,7 @@ button {
 #result {
   margin-top: 20px;
   font-size: 18px;
+  color: red;
 }
 #restartButton {
   display: none;
@@ -46,12 +51,37 @@ button {
   padding: 10px 20px;
   margin-top: 10px;
   cursor: pointer;
-
+  color: white;
 }
 
 .gun{
     padding: 10px;
     height: 200px;
-    transform: rotate3d(0, 1, 0.5, 3.142rad);
+
 }
 
+.flipped {
+  transform: scaleX(-1);
+}
+
+.blankOne {
+height: 300px;
+width: 300px;
+}
+
+.blankTwo{
+height: 300px;
+width: 300px;
+}
+
+.hidden{
+  display: none;
+}
+
+.gallery button img, .gallery button {
+  border: none;
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  padding: 0;
+}

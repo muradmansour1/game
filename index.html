@@ -5,61 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Russian Roulette Game</title>
     <link rel="stylesheet" href="./style.css">
-    <style>
-        
-    </style>
+    <script src="./script.js" defer></script>
 </head>
 <body>
-  <h1>Russian Roulette Game</h1>
-  <p>Click the button to pull the trigger!</p>
-  
-  <button id="triggerButton">Pull the Trigger</button>
-  <div id="result"></div>
-  <img class="gun" src="./assets/gun-no-background.png" alt="gun">
-<button id="restartButton" onclick="restartGame()">Restart Game</button>
+    <img id="russianRouletteTitle" class="title" src="./assets/russian-roulette-image.png">
+    <p>Click the button to pull the trigger!</p>
+    <button id="triggerButton">Pull the Trigger</button>
+    <div id="result"></div>
+    <img id="blankOne" class="blankOne" src="assets/blankImageOne.jpeg">
+    <img id="gunImage" class="gun" src="./assets/gun-no-background.png" alt="gun">
+    <img id="blankTwo" class="blankTwo" src="assets/blankImageOne.jpeg">
+    <div class="gallery">
+      <button id="josh"><img src="assets/josh.jpeg"></button>
+      <button id="ade"><img src="assets/ade.png"></button>
+      <button id="kia"><img src="assets/kia.png"></button>
+      <button id="kevin"><img src="assets/kevin.png"></button>
+      <button id="shyan"><img src="assets/shyan.jpeg"></button>
+    </div>
+    
+    <button id="restartButton" >Restart Game</button>
 
-<script>
-    let bullet = getRandomNumber(1, 6); // random number 1-6
-    let player = getRandomNumber(1, 6); // random number 1-6
 
-    function getRandomNumber(min, max) {
-        // returns a random number between min and max (inclusive)
-        const randomNumber = Math.floor(Math.random() * max) + min;
-        return randomNumber;
-    }
-
-    function pullTrigger() {
-        const resultElement = document.getElementById("result");
-        const restartButton = document.getElementById("restartButton");
-
-        if (player === bullet) {
-            resultElement.textContent = "Bang! You lost! Game over.";
-            restartButton.style.display = "block";
-        } else {
-            player = rotateBarrel(player);
-            resultElement.textContent = "Click! You survived!";
-        }
-    }
-
-    function rotateBarrel(location) {
-        let newLocation = location % 6;
-        newLocation += 1;
-        return newLocation;
-    }
-
-    function restartGame() {
-        const resultElement = document.getElementById("result");
-        const restartButton = document.getElementById("restartButton");
-
-        bullet = getRandomNumber(1, 6);
-        player = getRandomNumber(1, 6);
-
-        resultElement.textContent = "";
-        restartButton.style.display = "none";
-    }
-
-    document.getElementById("triggerButton").addEventListener("click", pullTrigger);
-</script>
-
+    
 </body>
 </html>
