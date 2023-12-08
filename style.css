@@ -38,6 +38,7 @@ button {
   background-color: black;
   font-family:monospace ;
   text-align: center;
+  border-radius: 50px;
 }
 
 #result {
@@ -52,6 +53,7 @@ button {
   margin-top: 10px;
   cursor: pointer;
   color: white;
+  border-radius: 50px;
 }
 
 .gun{
@@ -67,11 +69,13 @@ button {
 .blankOne {
 height: 300px;
 width: 300px;
+border-radius: 50px;
 }
 
 .blankTwo{
 height: 300px;
 width: 300px;
+border-radius: 50px;
 }
 
 .hidden{
@@ -85,3 +89,5 @@ width: 300px;
   margin: 0;
   padding: 0;
 }
+
+
