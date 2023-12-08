@@ -1,4 +1,4 @@
-// audio for my game
+// audio for game
 const noShotSound = new Audio("assets/no-shot.mp3")
 const gunshotSound = new Audio("./assets/gunshot.mp3");
 const reloadSound = new Audio("assets/clean-revolver-reload-6889.mp3");

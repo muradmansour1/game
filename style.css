@@ -10,7 +10,7 @@ html{
     padding: 20px;
     text-align: center;
     background-repeat: no-repeat;
-    background-size: contain; /* or cover, depending on your preference */
+    background-size: contain; 
     background-position: center top;
     background-size: 100%;
   }
