@@ -1,20 +1,21 @@
-// script.js
+// audio for my game
 const noShotSound = new Audio("assets/no-shot.mp3")
 const gunshotSound = new Audio("./assets/gunshot.mp3");
 const reloadSound = new Audio("assets/clean-revolver-reload-6889.mp3");
 
 
-
+//game state
 let bullet = getRandomNumber(1, 6); // random number 1-6
 let player = getRandomNumber(1, 6); // random number 1-6
 let CURRENT_PLAYER = 'blankOne'
 
+//function to generate a random number
 function getRandomNumber(min, max) {
     // returns a random number between min and max (inclusive)
     const randomNumber = Math.floor(Math.random() * max) + min;
     return randomNumber;
 }
-
+//function to pull the trigger
 function pullTrigger() {
     const resultElement = document.getElementById("result");
     const restartButton = document.getElementById("restartButton");
@@ -35,16 +36,13 @@ function pullTrigger() {
     }
 }
 
+//function to restart the game
 function restartGame() {
     const resultElement = document.getElementById("result");
     const restartButton = document.getElementById("restartButton");
     const gunImage = document.getElementById("gunImage");
     reloadSound.play()
     
-
-
-
-
     bullet = getRandomNumber(1, 6);
     player = getRandomNumber(1, 6);
 
@@ -55,6 +53,7 @@ function restartGame() {
     reloadSound.play();
 }
 
+//function to make the barrel rotate
 function rotateBarrel(location) {
     let newLocation = location % 6;
     newLocation += 1;
@@ -64,13 +63,14 @@ function rotateBarrel(location) {
 function blankOne(){
 
 }
-
+//function to show the gallery
 function showGallery(event){
   CURRENT_PLAYER=event.target.id
 let gallery = document.getElementsByClassName("gallery")[0]
 gallery.classList.toggle("hidden")
 }
 
+//function to change the picture
 function changePic(event){
   let pic = event.target.src
   console.log(pic);
@@ -78,7 +78,7 @@ function changePic(event){
   document.getElementsByClassName('gallery')[0].classList.add('hidden')
 }
 
-
+//event listeners
 document.getElementById("triggerButton").addEventListener("click", pullTrigger);
 document.getElementById("restartButton").addEventListener("click", function(){
 console.log("restart")
